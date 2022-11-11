@@ -1,9 +1,8 @@
 # Kubernetes-roadmap
-#DAY-1
+# DAY-1
+# Dockers
 
-#Dockers
-
--Containers and Container image(A container image is a binary package that encapsulates all of
+- Containers and Container image(A container image is a binary package that encapsulates all of
 the files necessary to run an application inside of an OS container)
 -Docker image format
 -Docker container runtime
