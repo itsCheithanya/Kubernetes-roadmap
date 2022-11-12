@@ -42,3 +42,8 @@ $ kubectl apply -f object.yaml
 $ kubectl delete <resource-name> <obj-name>
 
 ```
+# DAY-3
+# Pods
+- Pods in Kubernetes
+A Pod represents a collection of application containers and volumes running in
+the same execution environment. 
