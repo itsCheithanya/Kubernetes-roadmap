@@ -17,7 +17,7 @@ API for creating application containers on Linux and Windows systems.)
 
 # DAY-2
 - kubectl(use it to create objects and interact with the Kubernetes API.)
-that apply to all Kubernetes objects
+
 - Viewing Kubernetes API Objects(Everything contained in Kubernetes is represented by a RESTful resource)
 ```
 EXAMPLE:Kubernetes object exists at a unique HTTP path; for example, https://your-
@@ -37,4 +37,8 @@ Objects in the Kubernetes API are represented as JSON or YAML files. These
 files are either returned by the server in response to a query or posted to the
 server as part of an API request. You can use these YAML or JSON files to
 create, update, or delete objects on the Kubernetes server.
+
+$ kubectl apply -f object.yaml
+$ kubectl delete <resource-name> <obj-name>
+
 ```
