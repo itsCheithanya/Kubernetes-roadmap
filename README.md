@@ -25,4 +25,16 @@ k8s.com/api/v1/namespaces/default/pods/my-pod leads to the representation of a
 pod in the default namespace named my-pod. The kubectl command makes
 HTTP requests to these URLs to access the Kubernetes objects that reside at
 these paths.
+The command get helps to retreive it from the specified url over http using kubectl
+```
+```
+kubectl get <resource-name>
+```
+- Creating, Updating, and Destroying Kubernetes
+Objects
+```
+Objects in the Kubernetes API are represented as JSON or YAML files. These
+files are either returned by the server in response to a query or posted to the
+server as part of an API request. You can use these YAML or JSON files to
+create, update, or delete objects on the Kubernetes server.
 ```
