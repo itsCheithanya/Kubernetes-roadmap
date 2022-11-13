@@ -47,3 +47,35 @@ $ kubectl delete <resource-name> <obj-name>
 - Pods in Kubernetes
 A Pod represents a collection of application containers and volumes running in
 the same execution environment. 
+- Running Containers vs Pods
+```
+Running my-image by first fetching it from the GCR using the following Docker command:
+$ docker run -d --name  my-image \
+--publish 8080:8080 \
+gcr.io/my-image-demo/my-image-amd64:1
+```
+```
+Creating and running a Pod is via the imperative kubectl run command, to run my-image server, use:
+$ kubectl run my-image --image=gcr.io/my-image-demo/my-image-amd64:1
+```
+- Pod manifest(Similar result can be achieved by instead writing to a file named
+kuard-pod.yaml and then using kubectl commands to load that manifest to
+Kubernetes.)
+```
+apiVersion: v1
+kind: Pod
+metadata:
+name: my-image
+spec:
+containers:
+- image: gcr.io/my-image-demo/my-image-amd64:1
+name: my-image
+ports:
+- containerPort: 8080
+name: http
+protocol: TCP
+```
+Use this to launch a single instance of my-image
+```
+$ kubectl apply -f my-image.yaml
+```
