@@ -94,3 +94,31 @@ Readiness describes when a container is ready to serve user
 requests. 
 - tcpSocket health checks
 - exec probe
+
+# DAY-4
+# Resource metrics
+
+1.  Resource requests specify the minimum amount of a resource required to run the
+application. 
+2. Resource limits specify the maximum amount of a resource that an
+application can consume.
+
+NOTE:
+- Resources are requested per container, not per Pod. 
+- The total resources requested by the Pod is
+the sum of all resources requested by all containers in the Pod. 
+- When you establish limits on a container, the kernel is configured to ensure that
+consumption cannot exceed these limits
+
+# Persisting Data with Volumes
+To add a volume to a Pod manifest, there are two new stanzas to add to our
+configuration. 
+1. The first is a new **spec.volumes** section(This array defines all of
+the volumes that may be accessed by containers in the Pod manifest)
+2. The second addition is the **volumeMounts** array in the
+container definition. This array defines the volumes that are mounted into a
+particular container, and the path where each volume should be mounted.
+
+Note
+that two different containers in a Pod can mount the same volume at different
+mount paths.
