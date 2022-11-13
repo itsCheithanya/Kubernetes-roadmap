@@ -83,12 +83,14 @@ $ kubectl apply -f my-image.yaml
 # DAY-4
 # POD HEALTH Checks
 - Liveness Probe
+
 Liveness health checks run application-specific logic (e.g., loading a web page)
 to verify that the application is not just still running, but is functioning properly.
 Once a pod is up and running,the way to confirm that it is
 actually healthy and shouldn’t be restarted is by liveness probe
 - Readiness Probe
- Readiness describes when a container is ready to serve user
+
+Readiness describes when a container is ready to serve user
 requests. 
 - tcpSocket health checks
 - exec probe
