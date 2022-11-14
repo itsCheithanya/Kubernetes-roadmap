@@ -122,3 +122,7 @@ particular container, and the path where each volume should be mounted.
 Note
 that two different containers in a Pod can mount the same volume at different
 mount paths.
+
+# DAY-5
+# Labels and Annotations
+# Resource grouping
