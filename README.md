@@ -126,3 +126,20 @@ mount paths.
 # DAY-5
 # Labels and Annotations
 # Resource grouping
+- Label Selectors
+Label selectors are used to filter Kubernetes objects based on a set of labels.
+Selectors use a simple Boolean language. They are used both by end users (via
+tools like kubectl) and by different types of objects (such as how ReplicaSet
+relates to its Pods).
+Each deployment (via a ReplicaSet) creates a set of Pods using the labels
+specified in the template embedded in the deployment. This is configured by the
+kubectl run command.
+- Annotations are used in various places in Kubernetes, with the primary use case
+being rolling deployments. During rolling deployments, annotations are used to
+track rollout status and provide the necessary information required to roll back a
+deployment to a previous state.
+Users should avoid using the Kubernetes API server as a general-purpose
+database. Annotations are good for small bits of data that are highly associated
+with a specific resource. If you want to store data in Kubernetes but you don’t
+have an obvious object to associate it with, consider storing that data in some
+other, more appropriate database
