@@ -143,3 +143,21 @@ database. Annotations are good for small bits of data that are highly associated
 with a specific resource. If you want to store data in Kubernetes but you don’t
 have an obvious object to associate it with, consider storing that data in some
 other, more appropriate database
+
+# DAY-6
+# Service Discovery
+
+- The Domain Name System (DNS) is the traditional system of service discovery
+on the internet. DNS is designed for relatively stable name resolution with wide
+and efficient caching. 
+- Many systems (for example, Java, by default) look up a name in
+DNS directly and never re-resolve. This can lead to clients caching stale
+mappings and talking to the wrong IP. Even with short TTLs and well-behaved
+clients, there is a natural delay between when a name resolution changes and the
+client notices. There are natural limits to the amount and type of information that
+can be returned in a typical DNS query, too. Things start to break past 20–30 A
+records for a single name. SRV records solve some problems but are often very
+hard to use. Finally, the way that clients handle multiple IPs in a DNS record is
+usually to take the first IP address and rely on the DNS server to randomize or
+round-robin the order of records. This is no substitute for more purpose-built
+load balancing.
