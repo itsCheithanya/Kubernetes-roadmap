@@ -161,3 +161,4 @@ hard to use. Finally, the way that clients handle multiple IPs in a DNS record i
 usually to take the first IP address and rely on the DNS server to randomize or
 round-robin the order of records. This is no substitute for more purpose-built
 load balancing.
+# DAY-7
