@@ -173,3 +173,6 @@ load balancing.
   ![image](https://user-images.githubusercontent.com/85927700/203821382-cac577d2-0c81-4c18-8f1a-aad68ca67c74.png)
   ![image](https://user-images.githubusercontent.com/85927700/203822138-076b5f83-4c5b-415a-83d0-56770996064b.png)
 
+- removal of files from overlay
+- ![image](https://user-images.githubusercontent.com/85927700/203828480-ead13fa9-627c-42cc-bd58-8fac2c9705a7.png)
+
