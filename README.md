@@ -172,7 +172,7 @@ the same host,that is a set of processes is running in a sandbox isolated enviro
 Then there are a bunch of other namespaces which make it look like and feel like a virtual environment just like running a VM and that's what
 isolates one container from another one or one process rather from another one. In a sandbox environment there is a file system
 namespace so, each container can have its
-own operating system, other file systems are
+own operating system, other namespaces are
 each container can have its own network
 
 
