@@ -162,6 +162,20 @@ usually to take the first IP address and rely on the DNS server to randomize or
 round-robin the order of records. This is no substitute for more purpose-built
 load balancing.
 # DAY-7
+#  what makes containers possible 
+kernel provides a feature to run process's in isolation or a sandbox environment and this feature is the namespaces.
+
+# namespace
+- namespace gives the process isolation from other processes that are running on
+the same host,that is a set of processes is running in a sandbox isolated environment that's the PID namespace.
+
+Then there are a bunch of other namespaces which make it look like and feel like a virtual environment just like running a VM and that's what
+isolates one container from another one or one process rather from another one. In a sandbox environment there is a file system
+namespace so, each container can have its
+own operating system, other file systems are
+each container can have its own network
+
+
 # OverlayFS
 - overlayFS is a union mount filesystem implemenatation for Linux
 - Union mount is a combination of multiple directories into one that appears to contain their combined contents.
