@@ -162,3 +162,14 @@ usually to take the first IP address and rely on the DNS server to randomize or
 round-robin the order of records. This is no substitute for more purpose-built
 load balancing.
 # DAY-7
+# OverlayFS
+- overlayFS is a union mount filesystem implemenatation for Linux
+- Union mount is a combination of multiple directories into one that appears to contain their combined contents.
+- ![image](https://user-images.githubusercontent.com/85927700/203813107-8cce257f-d6c6-461a-81a6-0559629c90ae.png)
+- The dir1 lower layer contains file1 file2 file5
+- The dir2 upper layer contains file3 file4 file5
+- when the overlay is mounted on the upper layer the contents of file1 is same as file1 from dir2
+
+  ![image](https://user-images.githubusercontent.com/85927700/203821382-cac577d2-0c81-4c18-8f1a-aad68ca67c74.png)
+  ![image](https://user-images.githubusercontent.com/85927700/203822138-076b5f83-4c5b-415a-83d0-56770996064b.png)
+
