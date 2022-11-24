@@ -189,4 +189,4 @@ each container can have its own network
 
 - removal of files from overlay
 - ![image](https://user-images.githubusercontent.com/85927700/203828480-ead13fa9-627c-42cc-bd58-8fac2c9705a7.png)
-
+- containers are not only light weight to run but tranfer of upadtes is also light weight because of adaptaion of overlayFS 
