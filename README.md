@@ -195,7 +195,7 @@ each container can have its own network
 
 # DOCKER STORAGE
 # 1. Volumes
-# 1. Bind mount
+# 2. Bind mount
 # 3. tmpfs
 
 # DAY-11
@@ -204,6 +204,30 @@ each container can have its own network
 ![image](https://user-images.githubusercontent.com/85927700/206914734-c520a685-17fd-47aa-a4d8-acad8fd1a716.png)
 the docker0 is the virtual bridge interface and is the default brige in docker
 list the docker networks 
-![image](https://user-images.githubusercontent.com/85927700/206914986-3f3b931e-f343-468b-bd9f-7c63425c9637.png)
+![image](https://user-images.githubusercontent.com/85927700/206921187-edda0b5f-22c7-450c-b0c9-014960cf9040.png)
 ### Driver is the type of the network
 in this case network named bridge is of the type bridge
+![image](https://user-images.githubusercontent.com/85927700/206921066-2425016b-d904-4c67-a56f-543ae0fe99f4.png)
+
+
+creating three containers con1,con2 and con3 makes it go into default network brige, docker automatically created 3 [veth] interfaces and connected it to the virtual docker bridge where it acts as a switch 
+![image](https://user-images.githubusercontent.com/85927700/206921305-fb9120b4-c2fe-4151-9c04-b94484de0f30.png)
+the link can be seen using the bride link command
+![image](https://user-images.githubusercontent.com/85927700/206921341-88f1c140-133b-462f-8ab7-3b3f4404e7b4.png)
+![image](https://user-images.githubusercontent.com/85927700/206921342-c828d524-f8a2-4588-8847-a1dc965bd102.png)
+
+ Not only did it create virtual ethernet interfaces,but he also handed out IP addresses, which means it's also running some DHCP.which can be known by using this command.It does this using the host's /etc/resolv.conf which is the dns resolver present in the host machine  and making a copy of it.
+ 
+ ![image](https://user-images.githubusercontent.com/85927700/206921526-5c0d3c08-f20f-45e0-aad7-bbf9b2619d90.png)
+ 
+ Also since the bridge interface acts as a switch the containers connected to them can talk to each other .also conatiners can talk to outer world using the docker0 route interface 
+ ![image](https://user-images.githubusercontent.com/85927700/206922364-43d6a9e1-635d-418a-92e3-7a7440ca6d1a.png)
+ 
+ we can ping other containers from con4 conatiner and also to outer world using docker interface route
+![image](https://user-images.githubusercontent.com/85927700/206922132-1e1ccbd7-cd76-42d4-beaf-858c07bb30a1.png)
+
+but you cannot connect with the nginx containers con1,2,3 from outer world through their ip's
+whyy??? because we didnt expose the ports
+so redeploy them ![image](https://user-images.githubusercontent.com/85927700/206923013-6bbc9c9b-ba40-4464-887d-5db152cfdcdb.png)
+
+![image](https://user-images.githubusercontent.com/85927700/206922999-7689fe28-ffc0-4193-9709-3ac2dacf6ff6.png)
