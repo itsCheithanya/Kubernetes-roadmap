@@ -231,3 +231,13 @@ whyy??? because we didnt expose the ports
 so redeploy them ![image](https://user-images.githubusercontent.com/85927700/206923013-6bbc9c9b-ba40-4464-887d-5db152cfdcdb.png)
 
 ![image](https://user-images.githubusercontent.com/85927700/206922999-7689fe28-ffc0-4193-9709-3ac2dacf6ff6.png)
+
+## user denfined network
+![image](https://user-images.githubusercontent.com/85927700/206923584-f26b510b-9b5d-477d-ab08-d6d23dcbe02e.png)
+the user denfined network gives you dns and hence ping using name of the container 
+![image](https://user-images.githubusercontent.com/85927700/206923715-7b6e7769-b94d-47ae-a30a-6619ad006665.png)
+# mcvlan network
+# ipvlanl2
+# ipvlanl3
+# overlay
+# none network
