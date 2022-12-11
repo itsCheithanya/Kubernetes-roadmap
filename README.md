@@ -190,3 +190,20 @@ each container can have its own network
 - removal of files from overlay
 - ![image](https://user-images.githubusercontent.com/85927700/203828480-ead13fa9-627c-42cc-bd58-8fac2c9705a7.png)
 - containers are not only light weight to run but tranfer of upadtes is also light weight because of adaptaion of overlayFS 
+
+# DAY-10
+
+# DOCKER STORAGE
+# 1. Volumes
+# 1. Bind mount
+# 3. tmpfs
+
+# DAY-11
+# DOCKER-networking
+# DAY-10
+![image](https://user-images.githubusercontent.com/85927700/206914734-c520a685-17fd-47aa-a4d8-acad8fd1a716.png)
+the docker0 is the virtual bridge interface and is the default brige in docker
+list the docker networks 
+![image](https://user-images.githubusercontent.com/85927700/206914986-3f3b931e-f343-468b-bd9f-7c63425c9637.png)
+### Driver is the type of the network
+in this case network named bridge is of the type bridge
