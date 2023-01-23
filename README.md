@@ -30,6 +30,8 @@ The command get helps to retreive it from the specified url over http using kube
 ```
 kubectl get <resource-name>
 ```
+![image](https://user-images.githubusercontent.com/85927700/213722237-2c79e6f6-e43d-4215-ab74-632408511302.png)
+
 - Creating, Updating, and Destroying Kubernetes
 Objects
 ```
@@ -241,3 +243,10 @@ the user denfined network gives you dns and hence ping using name of the contain
 # ipvlanl3
 # overlay
 # none network
+# day-20
+![image](https://user-images.githubusercontent.com/85927700/213723462-5bb66386-5926-4339-98dd-4447ce45bc43.png)
+![image](https://user-images.githubusercontent.com/85927700/213723653-b45e835c-2867-4dd9-a99d-1c3bf79f2b19.png)
+![image](https://user-images.githubusercontent.com/85927700/213725074-96aed8ba-554d-42a9-bd5a-13831084c2bf.png)
+
+
+
