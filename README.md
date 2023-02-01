@@ -260,3 +260,43 @@ exposed to pods via explicit declaration in pod manifests and the Kubernetes
 API. In this way the Kubernetes secrets API provides an application-centric
 mechanism for exposing sensitive configuration information to applications in a
 way that’s easy to audit and leverages native OS isolation primitives.
+
+# day 23
+
+A special use case for secrets is to store access credentials for private Docker
+registries. Kubernetes supports using images stored on private registries, but
+access to those images requires credentials. Private images can be stored across
+one or more private registries. This presents a challenge for managing
+credentials for each private registry on every possible node in the cluster.
+Image pull secrets leverage the secrets API to automate the distribution of
+private registry credentials. Image pull secrets are stored just like normal secrets
+but are consumed through the spec.imagePullSecrets Pod specification field.
+Use the create secret docker-registry to create this special kind of secret:
+
+$ kubectl create secret docker-registry my-image-pull-secret \
+--docker-username=<username> \
+--docker-password=<password> \
+--docker-email=<email-address>
+  
+Enable access to the private repository by referencing the image pull secret in
+the pod manifest file, as shown in kuard-secret-ips.yaml
+  
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kuard-tls
+spec:
+  containers:
+    - name: kuard-tls
+      image: gcr.io/kuar-demo/kuard-amd64:1
+      imagePullPolicy: Always
+      volumeMounts:
+      - name: tls-certs
+        mountPath: "/tls"
+        readOnly: true
+  imagePullSecrets:
+  - name:  my-image-pull-secret
+  volumes:
+    - name: tls-certs
+      secret:
+        secretName: kuard-tls
