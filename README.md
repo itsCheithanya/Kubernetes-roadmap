@@ -249,4 +249,14 @@ the user denfined network gives you dns and hence ping using name of the contain
 ![image](https://user-images.githubusercontent.com/85927700/213725074-96aed8ba-554d-42a9-bd5a-13831084c2bf.png)
 
 
-
+# day 21
+While ConfigMaps are great for most configuration data, there is certain data
+that is extra-sensitive. This can include passwords, security tokens, or other
+types of private keys. Collectively, we call this type of data “secrets.”
+Kubernetes has native support for storing and handling this data with care.
+Secrets enable container images to be created without bundling sensitive data.
+This allows containers to remain portable across environments. Secrets are
+exposed to pods via explicit declaration in pod manifests and the Kubernetes
+API. In this way the Kubernetes secrets API provides an application-centric
+mechanism for exposing sensitive configuration information to applications in a
+way that’s easy to audit and leverages native OS isolation primitives.
