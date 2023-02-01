@@ -280,7 +280,7 @@ $ kubectl create secret docker-registry my-image-pull-secret \
   
 Enable access to the private repository by referencing the image pull secret in
 the pod manifest file, as shown in kuard-secret-ips.yaml
-  
+ ```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -300,3 +300,4 @@ spec:
     - name: tls-certs
       secret:
         secretName: kuard-tls
+```
