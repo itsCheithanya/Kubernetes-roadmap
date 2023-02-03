@@ -317,3 +317,25 @@ acceptable key name.
 --from-literal=<key>=<value>
 Use the specified key/value pair directly.
   ```
+
+# day 30
+The Deployment object exists to manage the release of new versions.
+Deployments represent deployed applications in a way that transcends any
+particular software version of the application. Additionally, Deployments enable
+you to easily move from one version of your code to the next version of your
+code. This “rollout” process is configurable and careful. It waits for a user-
+configurable amount of time between upgrading individual Pods. It also uses
+health checks to ensure that the new version of the application is operating
+correctly, and stops the deployment if too many failures occur.
+Using Deployments you can simply and reliably roll out new software versions
+without downtime or errors. The actual mechanics of the software rollout
+performed by a Deployment is controlled by a Deployment controller that runs
+in the Kubernetes cluster itself. This means you can let a Deployment proceed
+unattended and it will still operate correctly and safely. This makes it easy to
+integrate Deployments with numerous continuous delivery tools and services.
+  
+Deployment Strategies
+When it comes time to change the version of software implementing your
+service, a Kubernetes Deployment supports two different rollout strategies:
+# Recreate
+# RollingUpdate
