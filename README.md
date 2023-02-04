@@ -339,3 +339,33 @@ When it comes time to change the version of software implementing your
 service, a Kubernetes Deployment supports two different rollout strategies:
 # Recreate
 # RollingUpdate
+
+learn deployments using commands:
+```
+$ kubectl run nginx --image=nginx:1.7.12
+
+view this Deployment object by running:
+$ kubectl get deployments nginx
+
+You can see the label selector by looking at the Deployment object:
+$ kubectl get deployments nginx \
+-o jsonpath --template {.spec.selector.matchLabels}
+
+We can use this in a label selector query across ReplicaSets to
+find that specific ReplicaSet:
+$ kubectl get replicasets --selector=run=nginx
+
+see the relationship between a Deployment and a ReplicaSet in action.
+We can resize the Deployment using the imperative scale command:
+$ kubectl scale deployments nginx --replicas=2
+
+Now if we list that ReplicaSet again, we should see:
+$ kubectl get replicasets --selector=run=nginx
+
+let’s try the opposite, scaling the ReplicaSet:
+$ kubectl scale replicasets nginx-1128242161 --replicas=1
+
+Now get that ReplicaSet again:
+$ kubectl get replicasets --selector=run=nginx
+```
+
