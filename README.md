@@ -368,4 +368,70 @@ $ kubectl scale replicasets <your-replicaset-id> --replicas=1
 Now get that ReplicaSet again:
 $ kubectl get replicasets --selector=app=nginx
 ```
-
+# day 31
+# Integrating Storage Solutions and Kubernetes 
+## Services Without Selectors
+When we first introduced services, we talked at length about label queries and
+how they were used to identify the dynamic set of Pods that were the backends
+for a particular service. With external services, however, there is no such label
+query. Instead, you generally have a DNS name that points to the specific server
+running the database. For our example, let’s assume that this server is named
+database.company.com. To import this external database service into
+Kubernetes, we start by creating a service without a Pod selector that references
+the DNS name of the database server  dns-service.yaml
+  ```
+kind: Service
+apiVersion: v1
+metadata:
+name: external-database
+spec:
+type: ExternalName
+externalName: "database.company.com
+  ```
+When a typical Kubernetes service is created, an IP address is also created and
+the Kubernetes DNS service is populated with an A record that points to that IP
+address. When you create a service of type ExternalName, the Kubernetes DNS
+service is instead populated with a CNAME record that points to the external
+name you specified (database.company.com in this case). When an application
+in the cluster does a DNS lookup for the hostname external-
+database.svc.default.cluster, the DNS protocol aliases that name to
+“database.company.com.” This then resolves to the IP address of your external
+database server. In this way, all containers in Kubernetes believe that they are
+talking to a service that is backed with other containers, when in fact they are
+being redirected to the external database.
+Note that this is not restricted to databases you are running on your own
+infrastructure. Many cloud databases and other services provide you with a DNS
+name to use when accessing the database (e.g., my-
+database.databases.cloudprovider.com). You can use this DNS name as the
+externalName. This imports the cloud-provided database into the namespace of
+your Kubernetes cluster.Sometimes, however, you don’t have a DNS address for an external database
+service, just an IP address. In such cases, it is still possible to import this server
+as a Kubernetes service, but the operation is a little different. First, you create a
+Service without a label selector, but also without the ExternalName type we
+used before external-ip-service.yaml
+  ```
+kind: Service
+apiVersion: v1
+metadata:
+name: external-ip-database
+  ```
+At this point, Kubernetes will allocate a virtual IP address for this service and
+populate an A record for it. However, because there is no selector for the service,
+there will be no endpoints populated for the load balancer to redirect traffic to.
+Given that this is an external service, the user is responsible for populating the
+endpoints manually with an Endpoints resource 
+ external-ip-endpoints.yaml
+  ```
+kind: Endpoints
+apiVersion: v1
+metadata:
+name: external-ip-database
+subsets:
+- addresses:
+- ip: 192.168.0.1
+ports:
+- port: 3306
+  ```
+If you have more than one IP address for redundancy, you can repeat them in the
+addresses array. Once the endpoints are populated, the load balancer will start
+redirecting traffic from your Kubernetes service to the IP address endpoint(s).
