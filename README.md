@@ -370,7 +370,7 @@ $ kubectl get replicasets --selector=app=nginx
 ```
 # day 31
 # Integrating Storage Solutions and Kubernetes 
-## Services Without Selectors
+## 1.Services Without Selectors
 When we first introduced services, we talked at length about label queries and
 how they were used to identify the dynamic set of Pods that were the backends
 for a particular service. With external services, however, there is no such label
@@ -435,3 +435,20 @@ ports:
 If you have more than one IP address for redundancy, you can repeat them in the
 addresses array. Once the endpoints are populated, the load balancer will start
 redirecting traffic from your Kubernetes service to the IP address endpoint(s).
+  
+# 2.Running a Singleton
+ 1.Running a MySQL Singleton
+  To do this, we are going to create three basic objects:
+- A persistent volume to manage the lifespan of the on-disk storage
+independently from the lifespan of the running MySQL application
+- A MySQL Pod that will run the MySQL application
+- A service that will expose this Pod to other containers in the cluster
+  
+  if your needs are
+simple and you can survive limited downtime in the face of a machine failure or
+a need to upgrade the database software, a reliable singleton may be the right
+approach to storage for your application.
+  
+ 2.Dynamic Volume Provisioning 
+  
+# 3.Kubernetes-Native Storage with StatefulSets
