@@ -573,7 +573,7 @@ if a pod dies then the ip address of the pods goes away with it hence we assign 
  ![image](https://user-images.githubusercontent.com/85927700/217619643-bdd3158e-86c1-44db-8627-f9b5c28ecfd6.png)
  
   types of services offered are:-
-     1.ClusterIP:
+ #  1.ClusterIP:
      
  ![image](https://user-images.githubusercontent.com/85927700/217621043-65e86cd8-e0eb-4a56-8e18-846ba5d994ba.png)
  ![image](https://user-images.githubusercontent.com/85927700/217628665-614a567b-d72f-4ae6-8fe8-ec63a1300cf2.png)
@@ -608,7 +608,22 @@ if a pod dies then the ip address of the pods goes away with it hence we assign 
      
 ![image](https://user-images.githubusercontent.com/85927700/217633603-47a2088e-e57f-4f3c-9a04-ae74dd907a1d.png)
 
+# 2. Headless service 
+when application wants to talk to a specific pod 
+![image](https://user-images.githubusercontent.com/85927700/217634823-3d8ee730-15b8-411a-8839-b1be28ac2ea9.png)
+ 
+how to find the ip address of the specific pod which u want?
 
+![image](https://user-images.githubusercontent.com/85927700/217636635-7a6e3193-27bf-41d9-ab6c-dda9bac237c1.png)
+ 
+ So a headless service can be written by making the clusterIP field to none
+     
+![image](https://user-images.githubusercontent.com/85927700/217637077-7de8b497-d232-4f66-ae1c-faf47f1c9b79.png)
+ 
+     
+# 3. NodePort service 
+     
+# 4. LoadBalancer service     
 
 
 
