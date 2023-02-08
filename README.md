@@ -524,7 +524,7 @@ This also applies to scaling down the number of replicas.
      
  # Kubenetes architecture
 
-     # A worker node should have:
+# A worker node should have:
      
      1. conatiner-runtime
   
@@ -537,7 +537,7 @@ container runtime and the machine the node itself because at the end of the day 
 a pod or starting a pod with a container inside and then assigning resources from that node to the container like CPU RAM and storage resources so usually kubernetes cluster is made up of multiple nodes which also must have container runtime and kubelet services installed.
 ![image](https://user-images.githubusercontent.com/85927700/217567512-76523b03-49ff-4abe-8d35-edabea3723f3.png)     
      
-    # A master  have 4 processes run everytime:
+# A master  have 4 processes run everytime:
      
 ![image](https://user-images.githubusercontent.com/85927700/217569021-6476531f-40ff-4407-9de3-c7abab7f8951.png)     
      1. Kube API
