@@ -571,6 +571,43 @@ if a pod dies then the ip address of the pods goes away with it hence we assign 
  Service also provides load balancing among pods
      
  ![image](https://user-images.githubusercontent.com/85927700/217619643-bdd3158e-86c1-44db-8627-f9b5c28ecfd6.png)
+ 
+  types of services offered are:-
+     1.ClusterIP:
+     
+ ![image](https://user-images.githubusercontent.com/85927700/217621043-65e86cd8-e0eb-4a56-8e18-846ba5d994ba.png)
+ ![image](https://user-images.githubusercontent.com/85927700/217628665-614a567b-d72f-4ae6-8fe8-ec63a1300cf2.png)
+     
+  how does service know which pods to forward to and port?It is done by labels selectors and target port
+     
+![image](https://user-images.githubusercontent.com/85927700/217629566-2cfa692d-e85c-4f94-9369-cf6d310ae37d.png)
+     
+ below image shows target port to match a pod with specific port
+     
+![image](https://user-images.githubusercontent.com/85927700/217630424-bc8a04d5-1c0e-4d8e-9f84-65f642848211.png)
+     
+ Overall concept is put into one and shown as below
+     
+![image](https://user-images.githubusercontent.com/85927700/217630956-c2b70fd5-d8b5-4909-bd96-1cc689015875.png)
+     
+     
+# Target port vs port of service
+     
+![image](https://user-images.githubusercontent.com/85927700/217631483-4e961cb0-c6d5-4064-8139-80f523ad89a8.png)
+     
+# how in cluster  monogoDB pods and application pods communicate with services
+ ![image](https://user-images.githubusercontent.com/85927700/217632209-c84f0920-cfe9-46b2-95fb-8b5154f56754.png)
+
+ ![image](https://user-images.githubusercontent.com/85927700/217632310-a0ccb970-efaa-46d5-9a3a-0de6f1cb6d42.png)
+
+
+
+
+
+
+   
+
+
     
  
      
