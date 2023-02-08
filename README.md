@@ -520,3 +520,52 @@ This also applies to scaling down the number of replicas.
     kubectl rollout history deployment/helloworld: Get the rollout history
     kubectl rollout undo deployment/helloworld: Rollback to previous version
     kubectl rollout undo deployment/helloworld --to-revision=n: Rollback to any version version
+
+     
+ # Kubenetes architecture
+
+     # A worker node should have:
+     
+     1. conatiner-runtime
+  
+     2. Kube Proxy
+     
+     3. Kubelet:
+![image](https://user-images.githubusercontent.com/85927700/217565214-c1ab627f-0d10-4dba-9918-ccc278df7038.png)
+Application pods have containers running inside a container runtime needs to be installed on every node but the process that actually schedules those can those pods and the containers underneath is kubelet which is a process of kubernetes itself unlike container runtime that has interface with both
+container runtime and the machine the node itself because at the end of the day kubelet is responsible for taking that configuration and actually running
+a pod or starting a pod with a container inside and then assigning resources from that node to the container like CPU RAM and storage resources so usually kubernetes cluster is made up of multiple nodes which also must have container runtime and kubelet services installed.
+![image](https://user-images.githubusercontent.com/85927700/217567512-76523b03-49ff-4abe-8d35-edabea3723f3.png)     
+     
+    # A master  have 4 processes run everytime:
+     
+![image](https://user-images.githubusercontent.com/85927700/217569021-6476531f-40ff-4407-9de3-c7abab7f8951.png)     
+     1. Kube API
+     
+![image](https://user-images.githubusercontent.com/85927700/217569513-4c8c281a-b972-4118-988f-9d1218c61daa.png)
+![image](https://user-images.githubusercontent.com/85927700/217569696-b741a328-abf5-4a33-b3a4-dda61acbfc6f.png)     
+     
+     2. Scheduler
+ ![image](https://user-images.githubusercontent.com/85927700/217569866-487f3c4d-844f-4d9a-b799-e86c5986eb8b.png)
+ ![image](https://user-images.githubusercontent.com/85927700/217570162-fc84d535-8841-4d13-ac53-895366f1aab3.png)     
+    
+     3. Controller
+    
+ ![image](https://user-images.githubusercontent.com/85927700/217570770-07c598f6-63a8-44cf-a1ba-68d842d0674b.png)
+ ![image](https://user-images.githubusercontent.com/85927700/217570964-f1280a8b-737c-4cb3-a0c2-21ccb5e59bb7.png) 
+     
+     4. etcd
+     
+  ![image](https://user-images.githubusercontent.com/85927700/217571225-ed22ad13-a6e5-463d-8485-75bf695186c6.png)
+  ![image](https://user-images.githubusercontent.com/85927700/217571480-549c0787-3ed8-4689-b789-64bcff3cfe6c.png)
+
+
+
+
+
+
+
+
+
+
+
