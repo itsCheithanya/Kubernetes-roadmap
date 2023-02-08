@@ -562,7 +562,9 @@ a pod or starting a pod with a container inside and then assigning resources fro
 
 # day 35
 # Kubernetes services 
-![image](https://user-images.githubusercontent.com/85927 700/217618658-3e3d6ef5-08db-4fee-a82c-8f11663fcd3c.png)
+
+ ![image](https://user-images.githubusercontent.com/85927700/217620186-d77885e7-8555-493d-b7bb-87bdf89ebe84.png)
+
      
 if a pod dies then the ip address of the pods goes away with it hence we assign new ip so referring pod ip is unstable and hence we get stable ip by using 
  service.
