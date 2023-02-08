@@ -600,6 +600,16 @@ if a pod dies then the ip address of the pods goes away with it hence we assign 
 
  ![image](https://user-images.githubusercontent.com/85927700/217632310-a0ccb970-efaa-46d5-9a3a-0de6f1cb6d42.png)
 
+# Serving multiple end points by a service(by using mulltiports)
+ 
+![image](https://user-images.githubusercontent.com/85927700/217633278-ccec1f92-0255-4519-be6d-bc533e2adb4b.png)
+     
+ NOTE:important point is when it is multi port serving service then we name the ports as shown below
+     
+![image](https://user-images.githubusercontent.com/85927700/217633603-47a2088e-e57f-4f3c-9a04-ae74dd907a1d.png)
+
+
+
 
 
 
