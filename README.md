@@ -620,8 +620,10 @@ how to find the ip address of the specific pod which u want?
      
 ![image](https://user-images.githubusercontent.com/85927700/217637077-7de8b497-d232-4f66-ae1c-faf47f1c9b79.png)
  
+![image](https://user-images.githubusercontent.com/85927700/217637592-abb92ab4-a252-4f9d-95e9-62315452def4.png)
      
 # 3. NodePort service 
+![image](https://user-images.githubusercontent.com/85927700/217637795-13a7fb69-f76a-4046-aac3-6c47188bac8a.png)
      
 # 4. LoadBalancer service     
 
