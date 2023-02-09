@@ -624,8 +624,20 @@ how to find the ip address of the specific pod which u want?
      
 # 3. NodePort service 
 ![image](https://user-images.githubusercontent.com/85927700/217637795-13a7fb69-f76a-4046-aac3-6c47188bac8a.png)
-     
+![image](https://user-images.githubusercontent.com/85927700/217864931-62e5a8f3-4b80-40c8-8298-1b93538fe28e.png)
+![image](https://user-images.githubusercontent.com/85927700/217865282-6b9e9b0c-75c7-408a-adf8-9402bdfa73ff.png)
+however clusterIP service is automatically created
+![image](https://user-images.githubusercontent.com/85927700/217865630-b9bd7034-a63e-4764-8731-31601459efa6.png)
+its not very secure 
+![image](https://user-images.githubusercontent.com/85927700/217866356-012a4816-24c5-48bf-a919-92709c4f1f66.png)
+
 # 4. LoadBalancer service     
+![image](https://user-images.githubusercontent.com/85927700/217866817-2d24f36b-96fb-4ba0-b8d3-49b36067c021.png)
+![image](https://user-images.githubusercontent.com/85927700/217866908-4bd3b850-4d4d-4870-ae7b-edec333996e9.png)
+ 
+In reallife setup it is preferred to use
+![Uploading image.png…]()
+
 
 
 
