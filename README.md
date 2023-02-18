@@ -1,4 +1,10 @@
 # Kubernetes-roadmap
+
+Kubernetes is a container orchestration framework commonly de-
+ployed and used by researchers and practitioners. It facilitates the
+deployment, (auto)scaling and management of container-based ap-
+plications through declarative configuration files
+
 # DAY-1
 # Dockers
 
@@ -47,6 +53,7 @@ $ kubectl delete <resource-name> <obj-name>
 # DAY-3
 # Pods
 - Pods in Kubernetes
+- A pod is a group of containers that share storage and network resources.
 A Pod represents a collection of application containers and volumes running in
 the same execution environment. 
 - Running Containers vs Pods
