@@ -661,12 +661,14 @@ Once configured, the Horizontal Pod Autoscaler controller is in charge of checki
 To check metrics, HPA depends on another Kubernetes resource known as the Metrics Server. The Metrics Server provides standard resource usage measurement data by capturing data from “kubernetes.summary_api” such as CPU and memory usage for nodes and pods. It can also provide access to custom metrics (that can be collected from an external source) like the number of active sessions on a load balancer indicating traffic volume.
 
 In simple terms, HPA works in a “check, update, check again” style loop. Here’s how each of the steps in that loop work.
-
+   ![image](https://user-images.githubusercontent.com/85927700/224563908-d926bd39-ea8e-49dc-9508-45aec9d84a10.png)
     1.HPA continuously monitors the metrics server for resource usage.
     2.Based on the collected resource usage, HPA will calculate the desired number of replicas required.
     3.Then, HPA decides to scale up the application to the desired number of replicas.
     4.Finally, HPA changes the desired number of replicas.
     5.Since HPA is continuously monitoring, the process repeats from Step 1.
+
+ 
 
 
 
