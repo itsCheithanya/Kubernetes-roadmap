@@ -5,6 +5,9 @@ ployed and used by researchers and practitioners. It facilitates the
 deployment, (auto)scaling and management of container-based ap-
 plications through declarative configuration files
 
+# Have a look at my yt channel for Kubernetes and Dockers 101
+## Link https://youtu.be/uuO3d7B8ZIs
+
 # DAY-1
 # Dockers
 
